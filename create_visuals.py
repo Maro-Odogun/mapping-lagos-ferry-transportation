@@ -30,7 +30,7 @@ def create_scatter_map(df):
             font=dict(color='black')
         ),
         legend=dict(
-            x=0.35,   
+            x=0.21,   
             y=0.24,  
             xanchor='left',
             yanchor='top',
