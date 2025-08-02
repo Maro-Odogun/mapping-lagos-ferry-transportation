@@ -29,6 +29,16 @@ def create_scatter_map(df):
             font_family="Rockwell",
             font=dict(color='black')
         ),
+        legend=dict(
+            x=0.35,   
+            y=0.24,  
+            xanchor='left',
+            yanchor='top',
+            bgcolor='rgba(255, 255, 255, 0.4)',  
+            bordercolor='black',
+            font=dict(color='black', size=12),
+            borderwidth=1
+        ),
         height=600,
         width=800
     )
@@ -71,6 +81,7 @@ def create_folium_map(start_location):
                     (point['Ending Station Lat'], point['Ending Station Lng'])],
             # Display the Route ID to obtain schedule information upon click
             tooltip=f"{point['Route ID']}",
+            weight=6,
             # Get summary info on route
             popup=folium.Popup(f"<b>{point['Terminal']} <-> {point['Ending Station']}</b> <br>" \
                 + f"<b>Price</b>: ₦{point['Price']} <br>" \
