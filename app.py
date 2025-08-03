@@ -20,12 +20,13 @@ st.plotly_chart(scatter_map, use_container_width=True)
 start_location = (6.445737749170641, 3.415135796913002)   #Keffi Street
 map_lagos = create_folium_map(start_location)
 st.header(app_h2)
-routes_map = st_folium(map_lagos, height=350, use_container_width=True)
+routes_map = st_folium(map_lagos, height=500, use_container_width=True)
 
 
 # Get schedule for route with Route ID
 route_id = ''
 if routes_map["last_object_clicked_tooltip"]:
     st.subheader('Schedules')
+    st.caption('Click on the route lines for trip schedule information')
     route_id = float(routes_map["last_object_clicked_tooltip"])
     st.write(trip_scheduled_info[trip_scheduled_info['Route ID'] == route_id].reset_index(drop=True))
